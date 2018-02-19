@@ -85,20 +85,15 @@ def list_songs_by_genre
       counter += 1
     end
   end
-
-
-  # if genre = Genre.find_by_name(input)
-  #   genre.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-  #     puts "#{i}. #{s.artist.name} - #{s.name}"
-  #   end
-  # end
 end
 
 def play_song
   puts "Which song number would you like to play?"
 
   input = gets.strip.to_i
-  if (1..Song.all.length).include?(input)
+
+  if input > 0 && input <= Song.all.length 
+  #if (1..Song.all.length).include?(input)
     song = Song.all.sort{ |a, b| a.name <=> b.name }[input - 1]
   end
 
