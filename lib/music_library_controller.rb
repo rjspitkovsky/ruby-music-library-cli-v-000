@@ -43,15 +43,18 @@ def list_songs
       puts "#{counter}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       counter += 1
     end
-  # Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
-  #   puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
-  # end
 end
 
 def list_artists
-  Artist.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |a, i|
-    puts "#{i}. #{a.name}"
-  end
+    array = Artist.all.sort_by {|artist| artist.name}
+    counter = 1
+    array.each do |artist|
+      puts "#{counter}. #{artist.name}"
+      counter += 1
+    end
+  # Artist.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |a, i|
+  #   puts "#{i}. #{a.name}"
+  # end
 end
 
 def list_genres
