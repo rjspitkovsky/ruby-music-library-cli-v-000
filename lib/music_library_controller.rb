@@ -21,6 +21,9 @@ def call
     puts "What would you like to do?"
 
     input = gets.strip
+    input = gets.strip
+    input = gets.strip
+    input = gets.strip
 
     if input == "list songs"
       list_songs
@@ -35,7 +38,7 @@ def call
     elsif input == "play song"
       play_song
     end
-  #end 
+  #end
 end
 
 def list_songs
