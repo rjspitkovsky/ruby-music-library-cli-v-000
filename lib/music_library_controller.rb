@@ -34,7 +34,7 @@ def call
     elsif input == "play song"
       play_song
     end
-  #end
+  end
 end
 
 def list_songs
