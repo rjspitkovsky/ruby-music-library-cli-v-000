@@ -7,17 +7,17 @@ class MusicImporter
   end
 
   def files
-      Dir.entries(path).each do |filename|
-        @@filenames << filename
-      end
-      @@filenames.reject! do |filename|
-        filename == "." || filename == ".."
-      end
-    end
+    #   Dir.entries(path).each do |filename|
+    #     @@filenames << filename
+    #   end
+    #   @@filenames.reject! do |filename|
+    #     filename == "." || filename == ".."
+    #   end
+    # end
 
-  # def files
-  #   @files ||= Dir.entries("#{path}/*.mp3").collect{ |filename| filename.gsub("#{path}/", "") }
-  # end
+  def files
+    @files ||= Dir.entries("#{path}/*.mp3").collect{ |filename| filename.gsub("#{path}/", "") }
+  end
 
   def import
     files.each{ |f| Song.create_from_filename(f) }
