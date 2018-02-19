@@ -6,7 +6,7 @@ class MusicImporter
     @path = path
   end
 
-    #def files 
+    #def files
     #   Dir.entries(path).each do |filename|
     #     @@filenames << filename
     #   end
@@ -16,7 +16,7 @@ class MusicImporter
     # end
 
   def files
-    @files ||= Dir.entries("#{path}/*.mp3").collect{ |filename| filename.gsub("#{path}/", "") }
+    @files ||= Dir.glob("#{path}/*.mp3").collect{ |filename| filename.gsub("#{path}/", "") }
   end
 
   def import
