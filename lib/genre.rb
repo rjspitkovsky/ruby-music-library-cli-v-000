@@ -24,13 +24,10 @@ class Genre
   end
 
   def self.create(name)
-    self.new(name).save[0]
-    # genre = new(name)
-    # genre.save
-    # genre
-
-    # Or, as a one-liner:
-    # new(name).tap{ |g| g.save }
+    #self.new(name).save[0]
+    genre = new(name)
+    genre.save
+    genre
   end
 
   def artists
