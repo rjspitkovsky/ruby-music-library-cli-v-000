@@ -69,11 +69,18 @@ def list_songs_by_artist
 
     if artist = Artist.find_by_name(input)
       counter = 1
-      artist.songs.each do |song|
+
+      artist.songs.sort_by{|song| song.name}.each do |song|
         puts "#{counter}. #{song.name} - #{song.genre.name}"
         counter += 1
       end
     end
+
+    #   artist.songs.each do |song|
+    #     puts "#{counter}. #{song.name} - #{song.genre.name}"
+    #     counter += 1
+    #   end
+    # end
 
   # if artist = Artist.find_by_name(input)
   #   artist.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
