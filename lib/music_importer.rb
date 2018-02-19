@@ -1,7 +1,6 @@
 class MusicImporter
   attr_reader :path
 
-  @@filenames = []
 
   def initialize(path)
     @path = path
@@ -17,7 +16,7 @@ class MusicImporter
     end
 
   # def files
-  #   @files ||= Dir.glob("#{path}/*.mp3").collect{ |f| f.gsub("#{path}/", "") }
+  #   @files ||= Dir.entries("#{path}/*.mp3").collect{ |filename| filename.gsub("#{path}/", "") }
   # end
 
   def import
