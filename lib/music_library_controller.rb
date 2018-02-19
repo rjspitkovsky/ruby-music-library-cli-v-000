@@ -93,7 +93,7 @@ def play_song
   if input > 0 && input <= Song.all.length
     song = Song.all.sort_by{|song|song.name}[input - 1]
   end
-  puts "Playing #{song.name} by #{song.artist.name}" if song != nil 
+  puts "Playing #{song.name} by #{song.artist.name}" if song 
 end
 
 
