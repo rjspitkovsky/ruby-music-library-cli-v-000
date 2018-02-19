@@ -1,8 +1,8 @@
 class Genre
   extend Concerns::Findable
 
-  attr_accessor :name
-  attr_reader :songs
+  attr_accessor :name, :songs
+  #attr_reader :songs
 
   @@all = []
 
@@ -38,7 +38,7 @@ class Genre
 end
 
 
-# require 'pry'
+
 # class Genre
 # extend Concerns::Findable
 #
