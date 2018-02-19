@@ -10,7 +10,7 @@ module Concerns::Findable
         else
           self.create(name)
         end
-       end
+       #end
   end
 end
 
