@@ -44,9 +44,6 @@ class Song
 
   def self.create(name)
     self.new(name).save[0]
-    # song = new(name)
-    # song.save
-    # song
   end
 
   def self.find_by_name(name)
